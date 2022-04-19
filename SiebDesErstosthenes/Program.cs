@@ -10,9 +10,13 @@ namespace SiebDesErstosthenes
             int UpperBound = int.Parse(Console.ReadLine());
             bool[] Tagged = new bool[UpperBound + 1];
 
-           
-            ArrayFalsInitialsiert(Tagged);
 
+            ArrayFalsInitialsiert(Tagged);
+            Sieve(UpperBound, Tagged);
+        }
+
+        private static void Sieve(int UpperBound, bool[] Tagged)
+        {
             for (int i = 2; i < Math.Ceiling(Math.Sqrt(UpperBound)); i++)
             {
                 if (!Tagged[i])
